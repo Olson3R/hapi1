@@ -1,0 +1,25 @@
+{
+  "name": "hapi1",
+  "version": "1.0.0",
+  "description": "Home automation test UI.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "home",
+    "automation",
+    "test"
+  ],
+  "author": "Scott Olson",
+  "license": "ISC",
+  "dependencies": {
+    "bookshelf": "^0.7.9",
+    "dustjs-helpers": "^1.6.0",
+    "dustjs-linkedin": "^2.6.0",
+    "good": "^5.1.2",
+    "good-console": "^4.1.0",
+    "hapi": "^8.2.0",
+    "hapi-dust": "^1.0.0"
+  }
+}
