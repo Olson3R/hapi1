@@ -19,7 +19,10 @@ server.views({
   path: Path.join(__dirname, 'templates'),
   defaultExtension: 'dust',
   isCached: false,
-  layout: 'layouts/main'
+  compileOptions: {
+    basedir: 'templates',
+    defaultExtension: 'dust',
+  }
 })
 
 // register good

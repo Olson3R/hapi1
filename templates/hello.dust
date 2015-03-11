@@ -1,1 +1,9 @@
+{>"layouts/main" /}
+
+{<content}
 <h3>{name}</h3>
+
+{>inc /}
+{/content}
+
+{<boop}this is boop{/boop}
