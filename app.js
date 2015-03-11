@@ -1,5 +1,6 @@
 var Path = require('path')
 var Hapi = require('hapi')
+var dust = require('dustjs-linkedin')
 
 // server
 var server = new Hapi.Server()
@@ -19,7 +20,10 @@ server.views({
   path: Path.join(__dirname, 'templates'),
   defaultExtension: 'dust',
   isCached: false,
-  layout: 'layouts/main'
+  compileOptions: {
+    basedir: 'templates',
+    defaultExtension: 'dust',
+  }
 })
 
 // register good
