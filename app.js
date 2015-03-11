@@ -1,6 +1,5 @@
 var Path = require('path')
 var Hapi = require('hapi')
-var dust = require('dustjs-linkedin')
 
 // server
 var server = new Hapi.Server()
