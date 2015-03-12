@@ -20,8 +20,8 @@ server.views({
   defaultExtension: 'dust',
   isCached: false,
   compileOptions: {
-    basedir: 'templates',
-    defaultExtension: 'dust',
+    baseDir: 'templates',
+    defaultExt: 'dust',
   }
 })
 
