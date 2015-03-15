@@ -1,0 +1,9 @@
+{>"/layouts/main" /}
+
+{<main}
+  <ol class="breadcrumb">
+    <li><a href="/users">Users</a></li>
+    <li>{user.name}</li>
+  </ol>
+  {>"users/_form" /}
+{/main}
