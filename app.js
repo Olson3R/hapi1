@@ -10,47 +10,37 @@ server.connection({
       relativeTo: Path.join(__dirname, 'public')
     }
   },
-  router: { stripTrailingSlash: true }
+  router: {
+    isCaseSensitive: false,
+    stripTrailingSlash: true
+  }
 })
 
 // register views
+var baseDir = Path.join(__dirname, 'app/views')
+var templateExt = 'dust'
 server.views({
   engines: {dust: require('hapi-dust')},
-  path: Path.join(__dirname, 'templates'),
-  defaultExtension: 'dust',
+  path: baseDir,
+  defaultExtension: templateExt,
   isCached: false,
   compileOptions: {
-    baseDir: 'templates',
-    defaultExt: 'dust',
-  }
-})
-
-// register good
-server.register({
-  register: require('good'),
-  options: {
-    opsInterval: 15000,
-    reporters: [{
-      reporter: require('good-console'),
-      args: [{log: '*', response: '*', ops: '*', error: '*'}]
-    }]
-  }
-}, function(err) {
-  if (err) {
-    console.error(err)
+    baseDir: baseDir,
+    defaultExt: templateExt,
   }
 })
 
 // routes
-server.route({
-  method: 'GET',
-  path: '/hello',
-  handler: function(req, res) {
-    res.view('hello', {name: "this is a test"})
-  }
-})
+server.route(require('./config/routes').routes)
 
-// start server
-server.start(function() {
-  console.info('Server started at ' + server.info.uri)
+// register plugins and start server
+server.register(require('./config/plugins').plugins, function(err) {
+  if (err) {
+    throw err
+  }
+
+  // start server
+  server.start(function() {
+    console.info('Server started at ' + server.info.uri)
+  })
 })

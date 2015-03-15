@@ -20,6 +20,9 @@
     "good": "^5.1.2",
     "good-console": "^4.1.0",
     "hapi": "^8.2.0",
-    "hapi-dust": "git://github.com/Olson3R/hapi-dust"
+    "hapi-dust": "git://github.com/Olson3R/hapi-dust",
+    "hapi-sass": "^1.0.0",
+    "knex": "^0.7.6",
+    "pg": "^4.3.0"
   }
 }

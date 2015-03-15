@@ -1,0 +1,16 @@
+{>"/layouts/main" /}
+
+{<main}
+  <ol class="breadcrumb">
+    <li>Remotes</li>
+  </ol>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 btn-group-vertical btn-group-lg text-center" role="group">
+        {#remotes}
+          <a href="/remotes/{key}" class="btn btn-default">{title}</a>
+        {/remotes}
+      </div>
+    </div>
+  </div>
+{/main}

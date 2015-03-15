@@ -1,0 +1,35 @@
+{>"/layouts/main" /}
+
+{<main}
+  <ol class="breadcrumb">
+    <li>Users</li>
+  </ol>
+  <div class="btn-group" role="group">
+    <a href="/users/new" class="btn btn-default table-actions">New</a>
+  </div>
+  {?users}
+    <table class="table table-stripped">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      {#users}
+        <tr>
+          <td>{id}</td>
+          <td>{name}</td>
+          <td>{email}</td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <a href="/users/{id}/edit" class="btn btn-default">Edit</a>
+              <a href="/users/{id}/destroy" class="btn btn-default">Delete</a>
+            </div>
+          </td>
+        </tr>
+      {/users}
+    </table>
+  {:else}
+    <p class="text-muted"><em>No users found.</em></p>
+  {/users}
+{/main}
